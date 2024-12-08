@@ -10,13 +10,13 @@ pipeline {
     stages{
         stage("Clone Code"){
             steps{
-                git url: "https://github.com/LondheShubham153/django-notes-app.git", branch: "main"
+                git url: "https://github.com/Farooqbaymax/django-notes.git", branch: "main"
                 echo "Aaj toh LinkedIn Post bannta hai boss"
             }
         }
         stage("Build & Test"){
             steps{
-                sh "docker build . -t notes-app-jenkins:latest"
+                sh "docker build . -t notes-app:latest"
             }
         }
         stage("Push to DockerHub"){
